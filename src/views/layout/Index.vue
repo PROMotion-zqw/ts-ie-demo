@@ -47,12 +47,7 @@
       </a-menu>
     </a-layout-sider>
     <a-layout>
-      <a-layout-header style="padding-left: 20px">
-        <a-button shape="round" @click="onCollapse">
-          <IconCaretRight v-if="collapsed" />
-          <IconCaretLeft v-else />
-        </a-button>
-      </a-layout-header>
+      <CustomHeader :collapsed="collapsed" :onCollapsed="onCollapse" />
       <a-layout style="padding: 0 24px">
         <a-breadcrumb :style="{ margin: '16px 0' }">
           <a-breadcrumb-item>Home</a-breadcrumb-item>
@@ -64,42 +59,25 @@
     </a-layout>
   </a-layout>
 </template>
-<script>
-import { defineComponent, ref } from 'vue'
+<script lang="ts" setup>
 import { Message } from '@arco-design/web-vue'
-import {
-  IconCaretRight,
-  IconCaretLeft,
-  IconHome,
-  IconCalendar,
-} from '@arco-design/web-vue/es/icon'
+import { IconHome, IconCalendar } from '@arco-design/web-vue/es/icon'
+import CustomHeader from './header.vue'
+import { ref } from 'vue'
+const collapsed = ref(false)
+const onCollapse = () => {
+  console.log('Oncollapsed')
 
-export default defineComponent({
-  components: {
-    IconCaretRight,
-    IconCaretLeft,
-    IconHome,
-    IconCalendar,
-  },
-  setup() {
-    const collapsed = ref(false)
-    const onCollapse = () => {
-      collapsed.value = !collapsed.value
-    }
-    return {
-      collapsed,
-      onCollapse,
-      onClickMenuItem(key) {
-        Message.info({ content: `You select ${key}`, showIcon: true })
-      },
-    }
-  },
-})
+  collapsed.value = !collapsed.value
+}
+const onClickMenuItem = (key) => {
+  Message.info({ content: `You select ${key}`, showIcon: true })
+}
 </script>
 <style scoped>
 .layout-demo {
   height: 100vh;
-  background: var(--color-bg-1);
+  background: var(--color-fill-2);
   /* light --color-fill-2  dark --color-bg-1 */
 }
 .layout-demo :deep(.arco-layout-sider) .logo {
@@ -110,21 +88,17 @@ export default defineComponent({
 .layout-demo :deep(.arco-layout-sider-light) .logo {
   background: var(--color-fill-2);
 }
+
 .layout-demo :deep(.arco-layout-header) {
   height: 64px;
   line-height: 64px;
   background: var(--color-bg-3);
+  padding: 0px 20px;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
 }
-.layout-demo :deep(.arco-layout-footer) {
-  height: 48px;
-  color: var(--color-text-2);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 48px;
-}
+
 .layout-demo :deep(.arco-layout-content) {
   color: var(--color-text-2);
   font-weight: 400;

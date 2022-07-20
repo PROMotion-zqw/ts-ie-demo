@@ -11,4 +11,13 @@ export {
   SubMenu,
   Breadcrumb,
   BreadcrumbItem,
+  Space,
 } from '@arco-design/web-vue'
+
+// icon
+export {
+  IconSunFill,
+  IconMoonFill,
+  IconCaretRight,
+  IconCaretLeft,
+} from '@arco-design/web-vue/es/icon'

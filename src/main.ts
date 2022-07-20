@@ -11,6 +11,12 @@ const app = createApp(App)
 
 // 按需加载注册全局组件
 const ComponentList = Object.values(ArcoComponentMap)
-ComponentList.map((v) => app.component(`A${v.name}`, v))
+ComponentList.map((v) => {
+  if (v.name.indexOf('Icon') !== -1) {
+    app.component(v.name, v)
+  } else {
+    app.component(`A${v.name}`, v)
+  }
+})
 
 app.use(store).use(router).mount('#app')
