@@ -14,5 +14,10 @@ export default defineComponent({
   components: {
     HelloWorld,
   },
+  methods: {
+    getAdmin() {
+      console.log('1234')
+    },
+  },
 })
 </script>

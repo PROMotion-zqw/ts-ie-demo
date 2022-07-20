@@ -13,14 +13,16 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
+    'vue/multi-word-component-names': 'off',
     'prettier/prettier': [
       'error',
       {
         singleQuote: true,
-        // parser: 'flow',
         semi: false,
+        endOfLine: 'auto',
       },
     ],
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   overrides: [
     {
