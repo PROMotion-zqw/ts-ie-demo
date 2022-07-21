@@ -20,4 +20,6 @@ export {
   IconMoonFill,
   IconCaretRight,
   IconCaretLeft,
+  IconCalendar,
+  IconHome,
 } from '@arco-design/web-vue/es/icon'
