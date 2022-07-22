@@ -12,6 +12,7 @@ export {
   Breadcrumb,
   BreadcrumbItem,
   Space,
+  ConfigProvider,
 } from '@arco-design/web-vue'
 
 // icon

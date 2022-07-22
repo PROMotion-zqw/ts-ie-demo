@@ -22,6 +22,16 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    // 'comma-dangle': [
+    //   'error',
+    //   {
+    //     arrays: '',
+    //     objects: 'always-multiline',
+    //     imports: 'always-multiline',
+    //     exports: 'always-multiline',
+    //     functions: 'always-multiline',
+    //   },
+    // ],
     '@typescript-eslint/no-explicit-any': 'off',
   },
   overrides: [

@@ -1,3 +1,4 @@
+// 类型枚举
 export enum TypeMap {
   Object = 'Object',
   Undefined = 'Undefined',
@@ -7,4 +8,11 @@ export enum TypeMap {
   Null = 'Null',
   Boolean = 'Boolean',
   Array = 'Array',
+}
+
+// 主题枚举
+export enum ThemeMap {
+  light = 'light',
+  dark = 'dark',
+  blue = 'blue',
 }

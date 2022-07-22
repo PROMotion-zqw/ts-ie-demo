@@ -8,17 +8,5 @@
 //   modules: {},
 // })
 
-import { defineStore } from 'pinia'
-export const useUserStore = defineStore('user', {
-  state: () => ({
-    count: 0,
-  }),
-  getters: {
-    getCount: (state) => state.count,
-  },
-  actions: {
-    SET_COUNT() {
-      this.count++
-    },
-  },
-})
+export { default as userStore } from './user'
+export { default as themeStore } from './theme'

@@ -1,9 +1,10 @@
 <template>
   <div>
     {{ counter.count }}
+    {{ counter.name }}
   </div>
 </template>
 <script setup lang="ts">
-import { useUserStore } from '@/store/index'
-const counter = useUserStore()
+import { userStore } from '@/store/index'
+const counter = userStore()
 </script>
