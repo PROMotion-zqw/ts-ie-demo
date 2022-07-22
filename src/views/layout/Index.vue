@@ -1,14 +1,14 @@
 <template>
   <a-layout class="layout-demo">
-    <CustomSider :collapsed="collapsed" />
+    <CustomSider cname="侧边栏" :collapsed="collapsed" />
     <a-layout>
-      <CustomHeader :collapsed="collapsed" :onCollapsed="onCollapse" />
+      <CustomHeader
+        cname="页头"
+        :collapsed="collapsed"
+        :onCollapsed="onCollapse"
+      />
       <a-layout style="padding: 0 24px">
-        <a-breadcrumb :style="{ margin: '16px 0' }">
-          <a-breadcrumb-item>Home</a-breadcrumb-item>
-          <a-breadcrumb-item>List</a-breadcrumb-item>
-          <a-breadcrumb-item>App</a-breadcrumb-item>
-        </a-breadcrumb>
+        <CustomBreadCrumb cname="面包屑" />
         <a-layout-content>Content</a-layout-content>
       </a-layout>
     </a-layout>
@@ -17,6 +17,7 @@
 <script lang="ts" setup>
 import CustomHeader from './header.vue'
 import CustomSider from './sider.vue'
+import CustomBreadCrumb from './breadCrumb.vue'
 import { ref } from 'vue'
 const collapsed = ref(false)
 const onCollapse = () => {

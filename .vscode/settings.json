@@ -3,7 +3,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "prettier.trailingComma": "all",
+  "prettier.trailingComma": "es5",
   "prettier.bracketSpacing": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

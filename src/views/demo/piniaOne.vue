@@ -1,10 +1,10 @@
 <template>
   <div>
-    {{ counter.count }}
-    {{ counter.name }}
+    <!-- {{ counter.count }} -->
+    {{ counter.themeColor }}
   </div>
 </template>
 <script setup lang="ts">
-import { userStore } from '@/store/index'
-const counter = userStore()
+import { themeStore } from '@/store/index'
+const counter = themeStore()
 </script>
