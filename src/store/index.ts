@@ -13,4 +13,12 @@ export const useUserStore = defineStore('user', {
   state: () => ({
     count: 0,
   }),
+  getters: {
+    getCount: (state) => state.count,
+  },
+  actions: {
+    SET_COUNT() {
+      this.count++
+    },
+  },
 })
